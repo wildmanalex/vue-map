@@ -1,51 +1,19 @@
+
 var mainVm = new Vue({
     el: '#app',
     data : {
-        dot: []
-
+        flagArray: []
     },
     methods: {
-        
-        findlocation: function(event) {
-            //console.log(event);
-            this.dot.push ({
-                dotx: event.offsetX + 'px',
-                doty: event.offsetY +  'px'
+        placeAFlag: function($event) {
+            this.flagArray.push({
+                pageX: event.offsetX + 'px',
+                pageY: event.offsetY + 'px',
             })
         },
-        removemarker: function(dot, index, event) {
+        removeFlag: function(flags, index, $event) {
             event.stopPropagation()
-            this.dot.splice(index, 1)
+            this.flagArray.splice(index, 1)
         }
-
-
     }
 });
-
-
-
-// var mainVM = new Vue({
-//    el: "#app",
-//    data: {
-//        markers: [] //`<img class="marker" src="Micky_Mouse">`
-//    },
-//    methods: {
-//        makeAMouse: function($event) {
-//            //create marker at x and y
-//            this.markers.push({
-//                pageX: event.offsetX-10 + 'px',
-//                pageY: event.offsetY-30 + 'px',
-//            })
-//            // return this.marker
-//            // console.log($event)
-//            // $event.pageX
-//            // $event.page
-//            // $event.bubbles: false
-//        },
-//        mouseTrap: function(mouse, index, event) {
-//            event.stopPropagation()
-//            this.markers.splice(index, 1)
-
-//        }
-//    }
-// })

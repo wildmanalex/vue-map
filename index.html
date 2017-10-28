@@ -1,67 +1,39 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<script src="https://unpkg.com/vue"></script>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://use.fontawesome.com/8f5e0c9388.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/8f5e0c9388.js"></script>
 </head>
 <body>
 	<div id="app">
-		<div class="container">
+		<div v-on:click="placeAFlag()" class="container">
+			<img src="Westeros.jpg" class="img-fluid" alt="Responsive image">
+			
+			<div 
+			    v-on:click="removeFlag(flags, index, $event)"
+				v-for="(flags, index) in flagArray" 
+				class='thisFlag'
+				v-bind:style="{left : flags.pageX, top : flags.pageY}">
 
-			<img src="Westeros.jpg" 
-			class="img-fluid" 
-			alt="Responsive image" 
-			v-on:click="findlocation">
+				<i class="fa fa-flag fa-3x thisFlag" aria-hidden="true"></i>
 
-			<i class="fa fa-flag location fa-3x" aria-hidden="true"
-			v-for="point in dot" 
-			v-bind:style="{left: point.dotx, top: point.doty}"
-			v-on:click="removemarker(dot, index, $event)"
-			v-for:="(dot, index) in dot"
-			></i>
-
-
-
-
-<!-- 
-		<div id="app">
-           <div 
-           v-on:click="makeAMouse()" 
-           id="main-container"
-           >
-
-            <div 
-
-            v-on:click="mouseTrap(mice, index, $event)" 
-            v-for="(mice, index) in markers" 
-            class="mouse" 
-            v-bind:style="{left : mice.pageX, top : mice.pageY } 
-            ">
-
-            <img class="mouse" src="Mickey_Mouse.png">
-               </div>
-               
-               
-        
-               <img id="disneyland" src="disneyland.png">
-
-           </div>
-       </div> -->
-
-<!-- v-for and then v on click to remove-->
+			</div>
 
 
 		</div>
-    </div>
-
 
 		
-		<script type="text/javascript" src="main.js"></script>
+    </div>
+	<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
+
+
+		

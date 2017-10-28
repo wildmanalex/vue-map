@@ -2,21 +2,11 @@
 	position: relative;
 	text-align: center;
 }
-.container .img-fluid{
+.img-fluid{
 	width: 100%;
 	/*margin-top: 6rem;*/
 	position: relative;
 }
-.location {
+.thisFlag {
 	position: absolute;
-}
-.fa-flag {
-	transform: translateX(10%);
-	transform: translateY(-90%);
-
-
-}
-
-.space {
-	height: 20px;
 }
